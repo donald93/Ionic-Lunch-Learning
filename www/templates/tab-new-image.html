@@ -1,9 +1,10 @@
 <ion-view view-title="New Image">
   <ion-content class="padding">
-      <button class="button button-positive round">From Camera</button>
+      <button class="button button-positive round" ng-click="takePhoto()">From Camera</button>
   </br>
   </br>
       <button class="button button-positive round">From Phone Gallery</button>
+      <img src="{{image}}"/>
   </ion-content>
 </ion-view>
 

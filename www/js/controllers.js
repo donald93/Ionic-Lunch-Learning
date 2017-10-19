@@ -22,6 +22,31 @@ angular.module('starter.controllers', [])
 })
 
 .controller('NewImageCtrl', function($scope) {
+
+  $scope.image = "";
+  $scope.takePhoto = function()
+  {
+    navigator.camera.getPicture(onSuccess, onError, cameraOptions)
+  };
+
+  var onError = function(err)
+  {
+
+  }
+
+  var cameraOptions = {
+    correctOrientation: true,
+    targetWidth: 200,
+    targetHeight: 400
+  };
+
+  var onSuccess = function(photo)
+  {
+    $scope.image = photo;
+    $scope.$apply();
+    console.log(photo);
+  }
+
 })
 .controller('GalleryCtrl', function($scope, Photos) {
   $scope.photos = Photos.all();
