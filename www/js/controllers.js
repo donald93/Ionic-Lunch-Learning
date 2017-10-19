@@ -21,6 +21,11 @@ angular.module('starter.controllers', [])
   $scope.chat = Chats.get($stateParams.chatId);
 })
 
+.controller('NewImageCtrl', function($scope) {
+})
+.controller('GalleryCtrl', function($scope, Photos) {
+  $scope.photos = Photos.all();
+})
 .controller('AccountCtrl', function($scope) {
   $scope.settings = {
     enableFriends: true
